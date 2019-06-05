@@ -4,8 +4,8 @@ public class RemoveElementFromArr {
     public static void main(String[] args) {
         int[] array;
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter size of array: ");
         System.out.println("Have to put 1 more element with value='0' as last element of array");
+        System.out.println("Enter size of array: ");
         int size = input.nextInt();
 
         array = new int[size];
@@ -24,10 +24,9 @@ public class RemoveElementFromArr {
                 System.out.println("Position of element which expect to remove from array is: " + index_del);
             }
         }
-        for (int i = index_del; i < array.length - 1; i++) {
-            array[i] = array[i + 1];
-//            array[array.length - 1] = 0;
-        }
+        //            array[array.length - 1] = 0;
+        if (array.length - 1 - index_del >= 0)
+            System.arraycopy(array, index_del + 1, array, index_del, array.length - 1 - index_del);
         for (int value : array) {
             System.out.println(value + " \t ");
         }
